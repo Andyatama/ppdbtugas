@@ -29,7 +29,7 @@ class SiswaController extends Controller
         return datatables()
             ->of($siswa)
             ->addIndexColumn()
-            ->addColumn('jurusan', function($siswa){
+            ->addColumn('aksi', function($siswa){
                 return !empty($siswa->jurusan->nama) ? $siswa->jurusan->nama : '-';
             })
             ->addColumn('aksi', function($siswa){
@@ -53,7 +53,7 @@ class SiswaController extends Controller
      */
     public function create()
     {
-        return view('jurusan.form');
+        return view('siswa.form');
     }
 
     /**
@@ -136,6 +136,15 @@ class SiswaController extends Controller
     {
         $siswa = Siswa::find($id);
         $siswa->nama = $request->nama;
+        $siswa->jurusan = $request->jurusan;
+        $siswa->jenis_kelamin = $request->jenis_kelamin;
+        $siswa->email = $request->email;
+        $siswa->nisn = $request->nisn;
+        $siswa->tempat_lahir = $request->tempat_lahir;
+        $siswa->tanggal_lahir = $request->tanggal_lahir;
+        $siswa->alamat = $request->alamat;
+        $siswa->asal_sekolah = $request->asal_sekolah;
+        $siswa->nama_wali = $request->nama_wali;
         $siswa->update();
 
         return response()->json('Data Berhasil Disimpan');

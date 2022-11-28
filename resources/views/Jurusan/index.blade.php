@@ -18,7 +18,7 @@
             <div class="card-header">
                 <div class="col-12 col-lg-10 col-md-10">
                     <div>
-                        <h4>Data Jurusan</h4>
+                        <h4>Jurusan</h4>
                     </div>
                 </div>
                 

@@ -19,7 +19,7 @@
                     {{-- Judul --}}
                     <div class="card-header">
                         <div class="col-12 col-md-10 col-lg-10">
-                            <h4>Data Siswa</h4>
+                            <h4>Siswa</h4>
                         </div>
                         <div class="col-12 col-md-2 col-lg-2">
                             <button type="button" onclick="addForm('{{ route('siswa.store') }}')" class="btn btn-primary shadow-sm rounded-pill">

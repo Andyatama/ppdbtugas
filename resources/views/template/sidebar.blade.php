@@ -19,7 +19,7 @@
 
         <li class="{{ request()->is('siswa*') ? 'active' : ''}}">
           <a class="nav-link" href="{{route('siswa.index')}}"> 
-          <i class="fas fa-box"></i> 
+          <i class="fas fa-user"></i> 
           <span> Siswa</span></a>
         </li>
 

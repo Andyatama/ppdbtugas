@@ -28,13 +28,13 @@
                         <div class="my-1">
                             <label class="mb-2" for="nama">Jurusan</label>
                             <br>
-                            <select name="jenis_kelamin" id="jenis_kelamin" value="{{ old('jenis_kelamin')}}" class="form-control @error('jenis_kelamin') is-invalid @enderror">
+                            <select name="jurusan" id="jurusan" value="{{ old('jurusan')}}" class="form-control @error('jurusan') is-invalid @enderror">
                                 <option selected>Pilih...</option>
-                                @foreach($jurusan as $jurusan)
+                                @foreach($jurusan as $jurusan1)
                                     <option value="{{$jurusan->id}}">{{$jurusan->nama}}</option>
                                 @endforeach
                             </select>
-                            @error('jenis_kelamin')
+                            @error('jurusan')
                                 <div class="text-danger">
                                     {{ $message }}
                                 </div>

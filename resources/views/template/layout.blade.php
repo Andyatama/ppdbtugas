@@ -63,12 +63,12 @@
 <script src="{{ asset('datatable/dataTables.bootstrap4.min.js') }}"></script>
 <script src="{{ asset('datatable/dataTables.responsive.min.js') }}"></script>
 <script src="{{ asset('datatable/responsive.bootstrap4.min.js') }}"></script>
-  
-<!-- Page Specific JS File -->
-  <script src="{{ asset('assets/js/page/index.js') }}"></script>
 
 {{-- SweetAlert --}}
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>  
+
+  {{-- Izitoast --}}
+  <script src="{{ asset('/izitoast/iziToast.min.js') }}"></script>
   
 <!-- Template JS File -->
   <script src="{{asset('assets/js/scripts.js')}}"></script>

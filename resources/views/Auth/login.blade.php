@@ -68,7 +68,7 @@
                                     </div>
 
                                     <div class="text-center">
-                                        <a href="register">Daftar</a> | <a href="/">Batal</a>
+                                        <a href="/register">Daftar</a> | <a href="/">Batal</a>
                                         
                                     </div>
                                     
@@ -91,8 +91,8 @@
     <script src="{{ asset('assets/modules/jquery.min.js') }}"></script>
     <script src="{{ asset('assets/modules/popper.js') }}"></script>
     <script src="{{ asset('assets/modules/tooltip.js') }}"></script>
-    <script src="{{ asset('assets/modules/bootstrap/js/bootstrap.min.js') }}"></script>
-    <script src="{{ asset('assets/modules/nicescroll/jquery.nicescroll.min.js') }}"></script>
+    <script src="{{ asset('assets/modules/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('assets/modules/jquery.nicescroll.min.js') }}"></script>
     <script src="{{ asset('assets/modules/moment.min.js') }}"></script>
     <script src="{{ asset('assets/js/stisla.js') }}"></script>
 

@@ -7,6 +7,7 @@ use App\Models\Jurusan;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Validator;
+use PDF;
 use Str;
 class SiswaController extends Controller
 {
@@ -35,10 +36,12 @@ class SiswaController extends Controller
             })
             ->addColumn('aksi', function($siswa){
                 return '
+
                 <div class="btn-group">
                     <button onclick="editData(`' .route('siswa.update', $siswa->id). '`)" class="btn btn-warning btn-sm"><i class="fa fa-edit"></i></button>
                     <button onclick="deleteData(`' .route('siswa.destroy', $siswa->id). '`)" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button>
                 </div>
+
                 ';
             })
             ->rawColumns(['aksi', 'siswa'])
@@ -173,8 +176,13 @@ class SiswaController extends Controller
      */
     public function destroy($id)
     {
+        //hapus table siswa
         $siswa = Siswa::find($id);
         $siswa->delete();
+
+        // hapus table user
+        $user = User::find($id);
+        $user->delete();
 
         return redirect('siswa');
     }

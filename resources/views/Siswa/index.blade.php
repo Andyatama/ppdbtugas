@@ -65,7 +65,7 @@
         $(function() {
             table = $('.table').DataTable({
                 proccesing: true,
-                autowidth: true,
+                autowidth: false,
                 ajax: {
                     url: '{{ route('siswa.data') }}'
                 },
@@ -112,6 +112,10 @@
 
             $('#modalForm form').attr('action', url);
             $('#modalForm [name=_method]').val('post');
+        }
+
+        function pdf(url){
+        $('.form-siswa').attr('action', url).attr('target', '_blank').submit();
         }
 
         function editData(url){

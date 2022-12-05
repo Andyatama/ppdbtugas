@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Siswa;
+use App\Models\Register;
 use App\Models\Jurusan;
+use App\Models\Siswa;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Validator;
 use Str;
-class SiswaController extends Controller
+class RegisterController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,32 +18,9 @@ class SiswaController extends Controller
      */
     public function index()
     {
-        $siswa = Siswa::all();
         $jurusan = Jurusan::all();
 
-        return view('siswa.index', compact('siswa', 'jurusan'));
-    }
-
-    public function data()
-    {
-        $siswa = siswa::orderBy('id', 'desc')->get();
-
-        return datatables()
-            ->of($siswa)
-            ->addIndexColumn()
-            ->addColumn('jurusan_id', function($siswa){
-                return !empty($siswa->jurusan->nama) ? $siswa->jurusan->nama : '-';
-            })
-            ->addColumn('aksi', function($siswa){
-                return '
-                <div class="btn-group">
-                    <button onclick="editData(`' .route('siswa.update', $siswa->id). '`)" class="btn btn-warning btn-sm"><i class="fa fa-edit"></i></button>
-                    <button onclick="deleteData(`' .route('siswa.destroy', $siswa->id). '`)" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button>
-                </div>
-                ';
-            })
-            ->rawColumns(['aksi', 'siswa'])
-            ->make(true);
+        return view('auth.register', compact('jurusan'));
     }
 
     /**
@@ -52,7 +30,7 @@ class SiswaController extends Controller
      */
     public function create()
     {
-        return view('jurusan.form');
+        //
     }
 
     /**
@@ -118,64 +96,45 @@ class SiswaController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Siswa  $siswa
+     * @param  \App\Models\Register  $register
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Register $register)
     {
-        $siswa = Siswa::find($id);
-        return response()->json($siswa);
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Siswa  $siswa
+     * @param  \App\Models\Register  $register
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Register $register)
     {
-        $siswa = Siswa::find($id);
-        return view('siswa.form', compact('siswa'));
+        //
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Siswa  $siswa
+     * @param  \App\Models\Register  $register
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Register $register)
     {
-        $siswa = Siswa::find($id);
-        $siswa->nama = $request->nama;
-        $siswa->nisn = $request->nisn;
-        $siswa->jurusan_id = $request->jurusan_id;
-        $siswa->email = $request->email;
-        $siswa->telepon = $request->telepon;
-        $siswa->jenis_kelamin = $request->jenis_kelamin;
-        $siswa->agama = $request->agama;
-        $siswa->tempat_lahir = $request->tempat_lahir;
-        $siswa->tanggal_lahir = $request->tanggal_lahir;
-        $siswa->alamat = $request->alamat;
-        $siswa->asal_sekolah = $request->asal_sekolah;
-        $siswa->update();
-
-        return response()->json('Data Telah Diupdate');
+        //
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Siswa  $siswa
+     * @param  \App\Models\Register  $register
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Register $register)
     {
-        $siswa = Siswa::find($id);
-        $siswa->delete();
-
-        return redirect('siswa');
+        //
     }
 }

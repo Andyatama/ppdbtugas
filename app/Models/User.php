@@ -21,7 +21,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-        'role'
+        'role_id'
     ];
 
     /**
@@ -42,4 +42,10 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    use HasFactory;
+
+    protected $table = 'user';
+
+    protected $guarded = [];
 }

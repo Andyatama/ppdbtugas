@@ -19,7 +19,7 @@
                     {{-- Judul --}}
                     <div class="card-header">
                         <div class="col-12 col-md-10 col-lg-10">
-                            <h4>Siswa</h4>
+                            <h4>Data Siswa</h4>
                         </div>
                         <div class="col-12 col-md-2 col-lg-2">
                             <button type="button" onclick="addForm('{{ route('siswa.store') }}')" class="btn btn-primary shadow-sm rounded-pill">
@@ -29,7 +29,7 @@
                     </div>
 
                     {{-- Tabel --}}
-                    <div class="card-body"  style="width: 100%;">
+                    <div class="card-body" style="width: 100%;">
                         <table class="table table-striped text-nowrap">
                             <thead>
                                 <tr>
@@ -40,8 +40,6 @@
                                     <td scope="col">Email</td>
                                     <td scope="col">NISN</td>
                                     <td scope="col">Alamat</td>
-                                    <td scope="col">Asal Sekolah</td>
-                                    <td scope="col">Nama Wali</td>
                                     <td scope="col" style="width: 84px;">Aksi</td>
                                 </tr>
                             </thead>
@@ -67,20 +65,18 @@
         $(function() {
             table = $('.table').DataTable({
                 proccesing: true,
-                autowidth: false,
+                autowidth: true,
                 ajax: {
                     url: '{{ route('siswa.data') }}'
                 },
                 columns: [
                     {data: 'DT_RowIndex'},
                     {data: 'nama'},
-                    {data: 'jurusan'},
+                    {data: 'jurusan_id'},
                     {data: 'jenis_kelamin'},
                     {data: 'email'},
                     {data: 'nisn'},
                     {data: 'alamat'},
-                    {data: 'asal_sekolah'},
-                    {data: 'nama_wali'},
                     {data: 'aksi'}
                 ]
             });
@@ -129,10 +125,14 @@
             $.get (url)
                 .done((response) => {
                     $('#modalForm [name=nama]').val(response.nama);
-                    $('#modalForm [name=jurusan]').val(response.jurusan);
+                    $('#modalForm [name=jurusan_id]').val(response.jurusan_id);
                     $('#modalForm [name=jenis_kelamin]').val(response.jenis_kelamin);
+                    $('#modalForm [name=agama]').val(response.agama);
                     $('#modalForm [name=email]').val(response.email);
+                    $('#modalForm [name=telepon]').val(response.telepon);
                     $('#modalForm [name=nisn]').val(response.nisn);
+                    $('#modalForm [name=tempat_lahir]').val(response.tempat_lahir);
+                    $('#modalForm [name=tanggal_lahir]').val(response.tanggal_lahir);
                     $('#modalForm [name=alamat]').val(response.alamat);
                     $('#modalForm [name=asal_sekolah]').val(response.asal_sekolah);
                     $('#modalForm [name=nama_wali]').val(response.nama_wali);

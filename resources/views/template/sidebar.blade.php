@@ -29,9 +29,9 @@
           <span> Jurusan</span></a>
         </li>
 
-        <li class="menu-header">Setting</li>
+        <li class="menu-header">User</li>
         <li class="{{ request()->is('user*') ? 'active' : ''}}">
-          <a class="nav-link" href=""> 
+          <a class="nav-link" href="{{route('user.index')}}"> 
           <i class="fas fa-user"></i> 
           <span> User</span></a>
         </li>

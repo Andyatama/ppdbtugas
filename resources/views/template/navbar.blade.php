@@ -12,9 +12,6 @@
         <div class="d-sm-none d-lg-inline-block">{{!empty(auth()->user()->name) ? auth()->user()->name : ''}}</div></a>
         <div class="dropdown-menu dropdown-menu-right">
           <a href="#" class="dropdown-item has-icon">
-            <i class="far fa-user"></i> Profile
-          </a>
-          <a href="#" class="dropdown-item has-icon">
             <i class="fas fa-cog"></i> Settings
           </a>
           <div class="dropdown-divider"></div>

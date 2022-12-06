@@ -55,8 +55,6 @@
   </a>
 </li>
 
-<li class="menu-header">Setting</li>
-
 <li class="{{ request()->is('user') ? 'active' : '' }}">
   <a class="nav-link" href="/user">
       <i class="fas fa-user"></i>

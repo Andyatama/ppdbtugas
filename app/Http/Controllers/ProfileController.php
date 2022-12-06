@@ -16,6 +16,7 @@ class ProfileController extends Controller
     public function show($id)
     {
         $profile = Profile::find($id);
+       
         return response()->json($profile);
     }
 }

@@ -20,7 +20,7 @@
                             <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp"
                                 alt="avatar" class="rounded-circle img-fluid" style="width: 150px;">
                                 <h1>{{ !empty(Auth()->user()->name) ? Auth()->user()->name : '-' }}</h1>
-                            <p class="text-muted mb-1">{{ !empty(Auth()->user()->role_id) ? Auth()->user()->role_id : '-' }}</p>
+                            <p class="text-muted mb-1">{{ empty(Auth()->user()->role_id ) ? Auth()->user()->role_id : 'siswa' }}</p>
 
                             <!-- <button type="button" onclick="#" class="btn btn-tool btn-primary shadow-sm rounded-pill" style="width: 120px;">
                                 Edit Profil
